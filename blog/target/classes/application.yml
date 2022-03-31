@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+  #开启restful风格
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+#分页pageHelper
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+

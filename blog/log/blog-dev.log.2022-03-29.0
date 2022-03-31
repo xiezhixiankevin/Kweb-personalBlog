@@ -1,0 +1,1463 @@
+2022-03-29 10:25:42.065  INFO 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : Starting BlogApplication using Java 1.8.0_311 on xzx with PID 78804 (D:\ideaworkpalce\blog\target\classes started by 26802 in D:\ideaworkpalce\blog)
+2022-03-29 10:25:42.076 DEBUG 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-03-29 10:25:42.077  INFO 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : The following 1 profile is active: "dev"
+2022-03-29 10:25:42.205  INFO 78804 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-29 10:25:42.205  INFO 78804 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-29 10:25:44.047  INFO 78804 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-29 10:25:44.061  INFO 78804 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-29 10:25:44.061  INFO 78804 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-29 10:25:44.315  INFO 78804 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-29 10:25:44.317  INFO 78804 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2111 ms
+2022-03-29 10:25:45.227  INFO 78804 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-29 10:25:47.229  INFO 78804 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-29 10:25:47.260  INFO 78804 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-29 10:25:47.270  INFO 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : Started BlogApplication in 5.746 seconds (JVM running for 8.177)
+2022-03-29 10:27:00.506  INFO 78804 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-29 10:27:00.512  INFO 78804 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-29 10:27:00.517  INFO 78804 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-29 10:27:00.869  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 10:27:00.898  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 10:27:00.899  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:27:01.038  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 10:27:01.476  INFO 78804 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-29 10:27:02.087  INFO 78804 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-29 10:27:02.389  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 10:27:02.391  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:27:03.787 ERROR 78804 --- [http-nio-8080-exec-2] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/favicon.ico，Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "favicon.ico"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:211)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:700)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 51 common frames omitted
+
+2022-03-29 10:27:03.791  WARN 78804 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2022-03-29 10:27:06.371  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:27:06.501  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:27:06.503  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:27:07.299  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:27:50.740  WARN 78804 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48s551ms712µs100ns).
+2022-03-29 10:27:50.741  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@5545fb12, com.xiezhixian.blog.pojo.Comment@37e57f4b]
+2022-03-29 10:27:50.747  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:28:19.206  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.saveComment', args=[8, com.xiezhixian.blog.pojo.Comment@29d45240]}
+2022-03-29 10:28:22.503  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@6732e78c, com.xiezhixian.blog.pojo.Comment@18687777]
+2022-03-29 10:28:22.506  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:30:31.888  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:30:31.897  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:30:31.899  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:30:32.934  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:30:35.705  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@b6b1f04, com.xiezhixian.blog.pojo.Comment@5cf42bcd]
+2022-03-29 10:30:35.708  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:31:50.040  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:31:50.048  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:31:50.050  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:31:50.796  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:31:50.800  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@23d4c33b, com.xiezhixian.blog.pojo.Comment@2779eca1]
+2022-03-29 10:31:50.800  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:32:51.073  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:32:51.083  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:32:51.085  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:32:52.004  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:32:52.012  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@54c8bec0, com.xiezhixian.blog.pojo.Comment@19349757]
+2022-03-29 10:32:52.013  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:35:16.581  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:35:16.588  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:35:16.589  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:35:18.356  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:35:18.363  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@27d6fe3, com.xiezhixian.blog.pojo.Comment@d84a8a8]
+2022-03-29 10:35:18.364  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:35:18.373 ERROR 78804 --- [http-nio-8080-exec-7] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/favicon.ico，Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "favicon.ico"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:211)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:700)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 51 common frames omitted
+
+2022-03-29 10:35:18.374  WARN 78804 --- [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2022-03-29 10:37:57.698  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:37:57.722  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:37:57.723  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:37:58.868  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:37:58.876  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@6dcce4db, com.xiezhixian.blog.pojo.Comment@61e796de]
+2022-03-29 10:37:58.877  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:37:59.285 ERROR 78804 --- [http-nio-8080-exec-2] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/favicon.ico，Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "favicon.ico"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:211)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:700)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 51 common frames omitted
+
+2022-03-29 10:37:59.286  WARN 78804 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2022-03-29 10:45:11.219  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:45:11.233  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:45:11.238  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:45:13.573  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:45:13.580  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@46e87f9e, com.xiezhixian.blog.pojo.Comment@831b35c]
+2022-03-29 10:45:13.580  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:45:13.592 ERROR 78804 --- [http-nio-8080-exec-8] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/favicon.ico，Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "favicon.ico"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:211)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:700)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 51 common frames omitted
+
+2022-03-29 10:45:13.593  WARN 78804 --- [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2022-03-29 10:45:31.733  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:45:31.747  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:45:31.750  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:45:33.102  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:45:33.110  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@93100e9, com.xiezhixian.blog.pojo.Comment@73b935d0]
+2022-03-29 10:45:33.111  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:45:33.566 ERROR 78804 --- [http-nio-8080-exec-6] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/favicon.ico，Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "favicon.ico"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:211)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:700)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 51 common frames omitted
+
+2022-03-29 10:45:33.567  WARN 78804 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2022-03-29 10:46:37.795  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:46:37.805  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:46:37.807  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:46:38.696  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:46:38.701  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@41e68440, com.xiezhixian.blog.pojo.Comment@27f72a90]
+2022-03-29 10:46:38.702  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:46:38.933 ERROR 78804 --- [http-nio-8080-exec-4] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/favicon.ico，Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "favicon.ico"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:211)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:700)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 51 common frames omitted
+
+2022-03-29 10:46:38.934  WARN 78804 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2022-03-29 10:47:00.819  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:47:00.832  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:47:00.835  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:47:01.807  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:47:01.814  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@1f4fd0b5, com.xiezhixian.blog.pojo.Comment@6341c4f3]
+2022-03-29 10:47:01.815  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:47:02.053 ERROR 78804 --- [http-nio-8080-exec-6] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/favicon.ico，Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "favicon.ico"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:211)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:700)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 51 common frames omitted
+
+2022-03-29 10:47:02.054  WARN 78804 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2022-03-29 10:47:24.659  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:47:24.672  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:47:24.675  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:47:25.760  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:47:25.765  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@19ceb546, com.xiezhixian.blog.pojo.Comment@8bc644c]
+2022-03-29 10:47:25.765  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:57:43.575  INFO 78804 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-29 10:57:43.579  INFO 78804 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-03-29 10:57:43.834  INFO 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : Starting BlogApplication using Java 1.8.0_311 on xzx with PID 78804 (D:\ideaworkpalce\blog\target\classes started by 26802 in D:\ideaworkpalce\blog)
+2022-03-29 10:57:43.834 DEBUG 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-03-29 10:57:43.835  INFO 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : The following 1 profile is active: "dev"
+2022-03-29 10:57:44.632  INFO 78804 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-29 10:57:44.633  INFO 78804 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-29 10:57:44.633  INFO 78804 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-29 10:57:44.749  INFO 78804 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-29 10:57:44.750  INFO 78804 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 912 ms
+2022-03-29 10:57:45.094  INFO 78804 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-29 10:57:45.269  INFO 78804 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-29 10:57:45.279  INFO 78804 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-29 10:57:45.283  INFO 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : Started BlogApplication in 1.543 seconds (JVM running for 1926.189)
+2022-03-29 10:57:45.285  INFO 78804 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-03-29 10:57:49.979  INFO 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : Starting BlogApplication using Java 1.8.0_311 on xzx with PID 78804 (D:\ideaworkpalce\blog\target\classes started by 26802 in D:\ideaworkpalce\blog)
+2022-03-29 10:57:49.979 DEBUG 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-03-29 10:57:49.980  INFO 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : The following 1 profile is active: "dev"
+2022-03-29 10:57:50.437  INFO 78804 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-29 10:57:50.438  INFO 78804 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-29 10:57:50.438  INFO 78804 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-29 10:57:50.560  INFO 78804 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-29 10:57:50.560  INFO 78804 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 577 ms
+2022-03-29 10:57:50.909  INFO 78804 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-03-29 10:57:51.064  INFO 78804 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-29 10:57:51.074  INFO 78804 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-29 10:57:51.077  INFO 78804 --- [restartedMain] com.xiezhixian.blog.BlogApplication      : Started BlogApplication in 1.159 seconds (JVM running for 1931.984)
+2022-03-29 10:57:51.079  INFO 78804 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-03-29 10:58:10.507  INFO 78804 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-29 10:58:10.510  INFO 78804 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-29 10:58:10.512  INFO 78804 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-29 10:58:10.524  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:58:10.529  INFO 78804 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-03-29 10:58:10.535  INFO 78804 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-03-29 10:58:10.610  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:58:10.611  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:58:11.322  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:58:11.400  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@2708922f, com.xiezhixian.blog.pojo.Comment@40f7f685]
+2022-03-29 10:58:11.401  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:58:17.540  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:58:17.559  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:58:17.560  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:58:18.278  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:58:18.283  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@38968c91, com.xiezhixian.blog.pojo.Comment@4a557fcf]
+2022-03-29 10:58:18.283  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:58:20.725  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 10:58:20.736  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 10:58:20.738  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 10:58:21.334  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 10:58:21.342  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@2501efe6, com.xiezhixian.blog.pojo.Comment@6ebf732e]
+2022-03-29 10:58:21.342  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:03:51.586  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/search/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.SearchController.searchBlog', args=[xxx, 1, {}]}
+2022-03-29 11:03:51.624  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : result,search
+2022-03-29 11:03:51.626  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:06:57.727  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 11:06:57.746  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:06:57.746  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:06:58.824  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 11:06:58.829  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@79c76d97, com.xiezhixian.blog.pojo.Comment@3c67a69f]
+2022-03-29 11:06:58.832  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:06:59.152  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 11:06:59.156  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 11:06:59.156  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:06:59.164  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 11:06:59.239  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 11:06:59.240  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:07:02.403 ERROR 78804 --- [http-nio-8080-exec-7] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/type，Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "type"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "type"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:211)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:700)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 51 common frames omitted
+
+2022-03-29 11:07:02.407  WARN 78804 --- [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "type"]
+2022-03-29 11:07:30.431  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 11:07:30.434  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 11:07:30.437  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:07:30.439  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 11:07:30.481  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 11:07:30.482  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:09:05.325  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 11:09:05.326  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 11:09:05.326  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:09:05.327  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 11:09:05.377  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 11:09:05.378  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:09:06.609  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 1]}
+2022-03-29 11:09:06.621  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:09:06.621  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:09:07.377  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[1]}
+2022-03-29 11:09:07.379  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : result,[]
+2022-03-29 11:09:07.380  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:09:17.289  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.saveComment', args=[1, com.xiezhixian.blog.pojo.Comment@6de85293]}
+2022-03-29 11:09:17.297  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@7fa16455]
+2022-03-29 11:09:17.298  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:09:43.443  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 11:09:43.445  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 11:09:43.449  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:09:43.450  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 11:09:43.492  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 11:09:43.492  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:09:56.889  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/5', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 5]}
+2022-03-29 11:09:56.899  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:09:56.901 ERROR 78804 --- [http-nio-8080-exec-9] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/blog/5，Exception : {}
+
+java.lang.NullPointerException: null
+	at org.commonmark.internal.util.Parsing.findLineBreak(Parsing.java:28)
+	at org.commonmark.internal.DocumentParser.parse(DocumentParser.java:105)
+	at org.commonmark.parser.Parser.parse(Parser.java:63)
+	at com.xiezhixian.blog.utils.MarkdownUtils.markdownToHtmlExtensions(MarkdownUtils.java:61)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl.getAndConvert(BlogServiceImpl.java:213)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl$$FastClassBySpringCGLIB$$7b21b7ce.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl$$EnhancerBySpringCGLIB$$57d9606b.getAndConvert(<generated>)
+	at com.xiezhixian.blog.controller.IndexController.blog(IndexController.java:62)
+	at com.xiezhixian.blog.controller.IndexController$$FastClassBySpringCGLIB$$b615b44c.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.xiezhixian.blog.controller.IndexController$$EnhancerBySpringCGLIB$$a74e03d9.blog(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-03-29 11:09:56.901  WARN 78804 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2022-03-29 11:10:00.516  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 11:10:00.518  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 11:10:00.520  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:10:00.521  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 11:10:00.559  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 11:10:00.559  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:10:02.569  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 1]}
+2022-03-29 11:10:02.585  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:10:02.586  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:10:03.311  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[1]}
+2022-03-29 11:10:03.314  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@7e8a1279]
+2022-03-29 11:10:03.314  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:10:05.163  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 11:10:05.174  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:10:05.177  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:10:05.893  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 11:10:05.898  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@74a6ff20, com.xiezhixian.blog.pojo.Comment@21ed0ce4]
+2022-03-29 11:10:05.898  INFO 78804 --- [http-nio-8080-exec-3] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:10:08.423  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/6', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 6]}
+2022-03-29 11:10:08.436  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:10:08.437  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:10:09.090  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/6', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[6]}
+2022-03-29 11:10:09.094  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : result,[]
+2022-03-29 11:10:09.094  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:10:11.714  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/4', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 4]}
+2022-03-29 11:10:11.720  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:10:11.722 ERROR 78804 --- [http-nio-8080-exec-2] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/blog/4，Exception : {}
+
+java.lang.NullPointerException: null
+	at org.commonmark.internal.util.Parsing.findLineBreak(Parsing.java:28)
+	at org.commonmark.internal.DocumentParser.parse(DocumentParser.java:105)
+	at org.commonmark.parser.Parser.parse(Parser.java:63)
+	at com.xiezhixian.blog.utils.MarkdownUtils.markdownToHtmlExtensions(MarkdownUtils.java:61)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl.getAndConvert(BlogServiceImpl.java:213)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl$$FastClassBySpringCGLIB$$7b21b7ce.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl$$EnhancerBySpringCGLIB$$57d9606b.getAndConvert(<generated>)
+	at com.xiezhixian.blog.controller.IndexController.blog(IndexController.java:62)
+	at com.xiezhixian.blog.controller.IndexController$$FastClassBySpringCGLIB$$b615b44c.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.xiezhixian.blog.controller.IndexController$$EnhancerBySpringCGLIB$$a74e03d9.blog(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-03-29 11:10:11.722  WARN 78804 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2022-03-29 11:10:14.398  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/4', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 4]}
+2022-03-29 11:10:14.413  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:10:14.414 ERROR 78804 --- [http-nio-8080-exec-10] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/blog/4，Exception : {}
+
+java.lang.NullPointerException: null
+	at org.commonmark.internal.util.Parsing.findLineBreak(Parsing.java:28)
+	at org.commonmark.internal.DocumentParser.parse(DocumentParser.java:105)
+	at org.commonmark.parser.Parser.parse(Parser.java:63)
+	at com.xiezhixian.blog.utils.MarkdownUtils.markdownToHtmlExtensions(MarkdownUtils.java:61)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl.getAndConvert(BlogServiceImpl.java:213)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl$$FastClassBySpringCGLIB$$7b21b7ce.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl$$EnhancerBySpringCGLIB$$57d9606b.getAndConvert(<generated>)
+	at com.xiezhixian.blog.controller.IndexController.blog(IndexController.java:62)
+	at com.xiezhixian.blog.controller.IndexController$$FastClassBySpringCGLIB$$b615b44c.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.xiezhixian.blog.controller.IndexController$$EnhancerBySpringCGLIB$$a74e03d9.blog(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-03-29 11:10:14.415  WARN 78804 --- [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2022-03-29 11:10:17.761  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/4', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 4]}
+2022-03-29 11:10:17.775  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:10:17.777 ERROR 78804 --- [http-nio-8080-exec-6] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/blog/4，Exception : {}
+
+java.lang.NullPointerException: null
+	at org.commonmark.internal.util.Parsing.findLineBreak(Parsing.java:28)
+	at org.commonmark.internal.DocumentParser.parse(DocumentParser.java:105)
+	at org.commonmark.parser.Parser.parse(Parser.java:63)
+	at com.xiezhixian.blog.utils.MarkdownUtils.markdownToHtmlExtensions(MarkdownUtils.java:61)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl.getAndConvert(BlogServiceImpl.java:213)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl$$FastClassBySpringCGLIB$$7b21b7ce.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.xiezhixian.blog.service.impl.BlogServiceImpl$$EnhancerBySpringCGLIB$$57d9606b.getAndConvert(<generated>)
+	at com.xiezhixian.blog.controller.IndexController.blog(IndexController.java:62)
+	at com.xiezhixian.blog.controller.IndexController$$FastClassBySpringCGLIB$$b615b44c.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.xiezhixian.blog.controller.IndexController$$EnhancerBySpringCGLIB$$a74e03d9.blog(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2022-03-29 11:10:17.777  WARN 78804 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2022-03-29 11:11:23.688  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 11:11:23.690  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 11:11:23.690  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:11:23.691  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 11:11:23.742  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 11:11:23.743  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:11:27.272  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/4', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 4]}
+2022-03-29 11:11:27.286  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:11:27.287  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:11:27.966  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/4', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[4]}
+2022-03-29 11:11:27.968  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,[]
+2022-03-29 11:11:27.968  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:12:45.248  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 11:12:45.250  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 11:12:45.252  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:12:45.252  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 11:12:45.291  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 11:12:45.291  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:12:50.005  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 11:12:50.006  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 11:12:50.008  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:12:50.009  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 11:12:50.043  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 11:12:50.043  INFO 78804 --- [http-nio-8080-exec-7] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:12:52.742  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 11:12:52.753  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:12:52.754  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:12:53.398  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 11:12:53.404  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@176e9cda, com.xiezhixian.blog.pojo.Comment@90cb8c4]
+2022-03-29 11:12:53.405  INFO 78804 --- [http-nio-8080-exec-9] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:14:38.157  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 11:14:38.169  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:14:38.171  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:14:39.061  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 11:14:39.065  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@71d25512, com.xiezhixian.blog.pojo.Comment@5d8788a1]
+2022-03-29 11:14:39.065  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:14:44.253  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 11:14:44.262  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:14:44.264  INFO 78804 --- [http-nio-8080-exec-1] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:14:45.034  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 11:14:45.039  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@33c5aaf8, com.xiezhixian.blog.pojo.Comment@76e33d1f]
+2022-03-29 11:14:45.040  INFO 78804 --- [http-nio-8080-exec-2] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:14:45.087 ERROR 78804 --- [http-nio-8080-exec-9] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/favicon.ico，Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "favicon.ico"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:211)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:700)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 51 common frames omitted
+
+2022-03-29 11:14:45.088  WARN 78804 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2022-03-29 11:14:45.813  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 11:14:45.813  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 11:14:45.814  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:14:45.815  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 11:14:45.846  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 11:14:45.847  INFO 78804 --- [http-nio-8080-exec-10] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:14:50.091  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 11:14:50.107  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:14:50.109  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:14:50.867  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 11:14:50.870  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@6521b953, com.xiezhixian.blog.pojo.Comment@255ae669]
+2022-03-29 11:14:50.870  INFO 78804 --- [http-nio-8080-exec-5] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:14:50.999 ERROR 78804 --- [http-nio-8080-exec-1] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/favicon.ico，Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "favicon.ico"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:211)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:700)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 51 common frames omitted
+
+2022-03-29 11:14:51.000  WARN 78804 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2022-03-29 11:15:00.953  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 11:15:00.967  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:15:00.971  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:15:01.827  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 11:15:01.833  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@5eb451c2, com.xiezhixian.blog.pojo.Comment@461f875b]
+2022-03-29 11:15:01.833  INFO 78804 --- [http-nio-8080-exec-6] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:15:02.094 ERROR 78804 --- [http-nio-8080-exec-3] c.x.b.h.ControllerExceptionHandler       : Requst URL : http://localhost:8080/favicon.ico，Exception : {}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "favicon.ico"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:211)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:700)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125)
+	... 51 common frames omitted
+
+2022-03-29 11:15:02.096  WARN 78804 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "favicon.ico"]
+2022-03-29 11:15:09.583  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 11:15:09.585  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 11:15:09.585  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:15:09.585  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 11:15:09.606  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 11:15:09.606  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:15:15.030  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.blog', args=[{}, 8]}
+2022-03-29 11:15:15.048  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : result,blog
+2022-03-29 11:15:15.050  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:15:15.770  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/blog/comment/8', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.CommentController.listComment', args=[8]}
+2022-03-29 11:15:15.797  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : result,[com.xiezhixian.blog.pojo.Comment@1fe47e10, com.xiezhixian.blog.pojo.Comment@66f0a83d]
+2022-03-29 11:15:15.798  INFO 78804 --- [http-nio-8080-exec-8] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:15:16.811  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.toIndex', args=[]}
+2022-03-29 11:15:16.813  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : result,forward:/1
+2022-03-29 11:15:16.813  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : -----after-------
+2022-03-29 11:15:16.814  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : Request : RequestLog{url='http://localhost:8080/1', ip='127.0.0.1', classMethod='com.xiezhixian.blog.controller.IndexController.index', args=[1, {}]}
+2022-03-29 11:15:16.880  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : result,index
+2022-03-29 11:15:16.883  INFO 78804 --- [http-nio-8080-exec-4] com.xiezhixian.blog.aspect.LogAspect     : -----after-------

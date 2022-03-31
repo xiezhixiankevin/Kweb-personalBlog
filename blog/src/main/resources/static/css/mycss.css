@@ -1,0 +1,30 @@
+.littleblue {
+    background-color: rgba(179, 232, 226, 0.95);
+}
+.littlebrown {
+    background-color: rgba(234, 227, 182, 0.95);
+}
+.red {
+    background-color: red;
+}
+.yellow {
+    background-color: yellow;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
+.black {
+    background-color: black;
+}
+.gray {
+    background-color: #e5e0e0;
+}
+.white {
+    background-color: white;
+}
+.border-ltgreen{
+    border:3px dashed #b4f6d2;
+}

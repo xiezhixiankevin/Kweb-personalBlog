@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!--引入jQuery-->
+  <script type="text/javascript" th:src="@{/js/jquery-1.12.4.min.js}"></script>
+  <!--引入样式-->
+  <link th:href="@{/lib/bootstrap-3.4.1-dist/bootstrap-3.4.1-dist/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/mycss.css}" rel="stylesheet">
+  <script th:src="@{/lib/bootstrap-3.4.1-dist/bootstrap-3.4.1-dist/js/bootstrap.min.js}"  ></script>
+</head>
+  <body class="littlebrown">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="page-header">
+            <h1>注册你的life账号<small>   life账号是你在社区的唯一标识</small></h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5 col-md-offset-4">
+          <form class="form-signin form-group-lg" th:method="post" th:action="@{/register}">
+            <h1 class="form-signin-heading">账号注册</h1>
+            <div>&nbsp;</div>
+            <label for="inputUsername" class="sr-only">Username</label>
+            用户名:<input name="username" type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            密码:
+            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            邮箱:
+            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputWebname" class="sr-only">给自己起一个有趣的网名</label>
+            网名:
+            <input name="webName"  id="inputWebname" class="form-control" placeholder="给自己起一个有趣的网名">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block btn-success" type="submit">注册</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

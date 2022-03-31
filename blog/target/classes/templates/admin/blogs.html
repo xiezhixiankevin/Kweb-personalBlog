@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head th:replace="admin/_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+    <title>博客管理</title>
+</head>
+<body>
+
+    <!--导航-->
+    <!--
+        inverted 颜色反转
+        attached 消除圆角，完全吻合
+    -->
+    <nav th:replace="admin/_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">管理后台</h2>
+                <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>博客</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+                <div class="right m-item menu m-mobile-hide">
+                    <div class="ui dropdown item">
+                        <div class="text">
+                            <img class="ui avatar image" src="https://picsum.photos/id/1005/100/100">
+                            Jenny Hess
+                        </div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a href="#" class="item">注销</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-top-right m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+    <!--二级导航-->
+    <nav>
+        <div class="ui attached pointing menu">
+            <div class="ui container">
+                <div class="right menu">
+                    <a href="#" class="item">发布</a>
+                    <a href="#" class="active teal item">列表</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!--中间内容-->
+    <div class="m-container-small m-padded-tb-big">
+       <div class="ui container">
+           <form id="searchForm" action="#" method="get" class="ui form segment">
+               <div class="inline fields">
+                   <div class="field">
+                       <input id="title_input" type="text" name="title" placeholder="标题">
+                   </div>
+                   <div class="field">
+                       <select id="type_input" style="width: 150px">
+                           <option value="none" selected disabled hidden>请选择选项</option>
+                           <option >不选择分类</option>
+                           <option v-for="type in typeList" value="type.id">{{type.name}}</option>
+                       </select>
+                   </div>
+                   <div class="field">
+                       <div class="ui checkbox">
+                           <input type="checkbox" id="recommend" name="recommend">
+                           <label for="recommend">推荐</label>
+                       </div>
+                   </div>
+                   <div class="field">
+                       <a  href="#" v-on:click="searchBlog(1)" class="ui mini teal basic button"><i class="search icon"></i>搜索</a>
+                   </div>
+               </div>
+           </form>
+
+           <table id="blogTable" class="ui celled table">
+               <thead>
+                <tr>
+                    <th>id</th>
+                    <th>标题</th>
+                    <th>类型</th>
+                    <th>推荐</th>
+                    <th>更新时间</th>
+                    <th>操作</th>
+                </tr>
+               </thead>
+               <tbody>
+                    <tr v-for="blog in blogList">
+                        <td>{{blog.id}}</td>
+                        <td>{{blog.title}}</td>
+                        <td>{{blog.flag}}</td>
+                        <td v-if="blog.recommend">是</td>
+                        <td v-if="!blog.recommend">否</td>
+                        <td>{{blog.updatetime}}</td>
+                        <td>
+                            <a href="#" v-bind:href="'updateBlog/'+blog.id" class="ui mini teal button">编辑</a>
+                            <a href="#" @click="deleteBlog(blog.id)" class="ui mini red button">删除</a>
+                        </td>
+                    </tr>
+               </tbody>
+               <tfoot>
+                <tr>
+                    <th colspan="6">
+                        <div class="ui mini pagination menu">
+                            <a v-on:click="ifFirstPage" id="preButton" class="icon stopHref item" href="#" v-bind:class="pageInfo.isFirstPage?'disabled' : '' ">
+                                <i class="left chevron icon"></i>
+                            </a>
+                            <a  v-on:click="searchBlog(num)" href="#" v-for="num in pageInfo.navigatepageNums" class="stopHref item">{{num}}</a>
+
+                            <a v-on:click="ifLastPage" id="nextButton" class="icon stopHref item" href="#" v-bind:class="pageInfo.isLastPage?'disabled' : '' ">
+                                <i class="right chevron icon"></i>
+                            </a>
+                        </div>
+                        <a href="#" th:href="@{@{/admin/toAddBlog}}" class="ui right floated blue button"><i class="plus icon"></i>新增</a>
+                    </th>
+                </tr>
+               </tfoot>
+           </table>
+       </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <!--底部footer-->
+    <footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment">
+        <div class="ui center aligned container m-padded-tb-massive">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="./static/images/wechat.jpg" alt="" class="ui rounded image" style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-opacity-mini m-text-spaced">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">如何成为java大神</a>
+                        <a href="#" class="item">如何成为java大神</a>
+                        <a href="#" class="item">如何成为java大神</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-opacity-mini m-text-spaced">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email:20251079@bjtu.edu.cn</a>
+                        <a href="#" class="item">QQ:268022625</a>
+                        <a href="#" class="item">Wechat:xiezhixiandeweixin</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-opacity-mini m-text-spaced">Xiezhixian</h4>
+                    <p class="m-opacity-mini m-text-thin m-text-spaced">这是我的个人博客，会分享关于编程，兴趣，生活，思考相关的任何内容，欢迎大家使用....</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-opacity-tiny m-text-thin m-text-spaced">Copyright © 2022 - 2023 Xiezhixian Designed by Xiezhixian</p>
+        </div>
+    </footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.2.4/dist/semantic.min.js"></script>
+<script th:src="@{/js/vue.js}"  type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/js/axios.min.js}"  type="text/javascript" charset="utf-8"></script>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide'); /*如果有m-mobile-hide就去除，没有就加上*/
+    });
+
+    $('.ui.dropdown')
+        .dropdown()
+    ;
+
+    $("#nextButton").click(function (){
+        if($('#nextButton').hasClass("disabled")) {
+            $('#nextButton').attr("href","#");
+        }
+    });
+
+    $("#preButton").click(function (){
+        if($('#preButton').hasClass("disabled")) {
+            $('#preButton').attr("href","#");
+        }
+    });
+
+    var searchForm = new Vue({
+        el:"#searchForm",
+        data: {
+            typeList:[],
+            title:"",
+            type:"",
+            pageInfo:[]
+        },
+        methods: {
+            listType:function () {
+                axios({
+                    method: "GET",
+                    url: "blog/types"
+                })
+                    .then(function (value) {
+                        searchForm.typeList = value.data;
+                    })
+                    .catch();
+            },
+            searchBlog:function (num){
+                var ifcheck = document.getElementById("recommend").checked;
+                searchForm.title = document.getElementById("title_input").value;
+                var index = document.getElementById("type_input").selectedIndex;
+                searchForm.type = document.getElementById("type_input").options[index].text;
+                axios({
+                    method : "GET",
+                    url : "searchBlog/"+num,
+                    params: {
+                        title : searchForm.title,
+                        type : searchForm.type,
+                        ifcheck : ifcheck
+                    }
+                })
+                    .then(function (value){
+                        searchFormVue.blogList = value.data.list;
+                        searchFormVue.pageInfo = value.data;
+
+                    })
+                    .catch();
+            }
+        },
+        mounted:function () {
+            this.listType();
+        }
+    });
+
+    var searchFormVue = new Vue({
+        el:"#blogTable",
+        data:{
+            blogList:[],
+            pageInfo:[]
+        },
+        methods:{
+            listBlog:function (pageNo) {
+                axios({
+                    method:"GET",
+                    url: "blog/"+pageNo
+                })
+                    .then(function (value) {
+                        searchFormVue.blogList = value.data.list;
+                        searchFormVue.pageInfo = value.data;
+                    })
+                    .catch(function (reason) {
+
+                });
+            },
+            ifFirstPage:function (event){
+                if(searchFormVue.pageInfo.isFirstPage) {
+                    $('#preButton').attr("href","#");
+                }else {
+                    searchForm.searchBlog(searchFormVue.pageInfo.prePage);
+                }
+            },
+            ifLastPage:function (event){
+
+                if(searchFormVue.pageInfo.isLastPage) {
+                    $('#nextButton').attr("href","#");
+                }else {
+                    searchForm.searchBlog(searchFormVue.pageInfo.nextPage);
+                }
+            },
+            searchBlog:function (num){
+                var ifcheck = document.getElementById("recommend").checked;
+                searchForm.title = document.getElementById("title_input").value;
+                var index = document.getElementById("type_input").selectedIndex;
+                searchForm.type = document.getElementById("type_input").options[index].text;
+                axios({
+                    method : "GET",
+                    url : "searchBlog/"+num,
+                    params: {
+                        title : searchForm.title,
+                        type : searchForm.type,
+                        ifcheck : ifcheck
+                    }
+                })
+                    .then(function (value){
+                        searchFormVue.blogList = value.data.list;
+                        searchFormVue.pageInfo = value.data;
+
+                    })
+                    .catch();
+            },
+            deleteBlog : function (id) {
+                axios({
+                   method : "DELETE",
+                   url : "blog/"+id
+                }).then(function (value) {
+                })
+                    .catch();
+                searchForm.searchBlog(1);
+            }
+
+        },
+        mounted:function (){
+           searchForm.searchBlog(1);
+        }
+
+    });
+
+
+
+</script>
+</body>
+</html>

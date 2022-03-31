@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiezhixian.blog.mapper.BlogMapper" >
+  <resultMap id="BaseResultMap" type="com.xiezhixian.blog.pojo.Blog" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="firstPicture" property="firstpicture" jdbcType="VARCHAR" />
+    <result column="flag" property="flag" jdbcType="VARCHAR" />
+    <result column="views" property="views" jdbcType="INTEGER" />
+    <result column="appreciation" property="appreciation" jdbcType="BIT" />
+    <result column="shareStatement" property="sharestatement" jdbcType="BIT" />
+    <result column="commentabled" property="commentabled" jdbcType="BIT" />
+    <result column="published" property="published" jdbcType="BIT" />
+    <result column="recommend" property="recommend" jdbcType="BIT" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="likes" property="likes" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="type_id" property="typeId" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.xiezhixian.blog.pojo.Blog" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, title, firstPicture, flag, views, appreciation, shareStatement, commentabled, 
+    published, recommend, createTime, updateTime, likes, user_id, type_id
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.xiezhixian.blog.pojo.BlogExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_blog
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xiezhixian.blog.pojo.BlogExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_blog
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_blog
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_blog
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xiezhixian.blog.pojo.BlogExample" >
+    delete from t_blog
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xiezhixian.blog.pojo.Blog" >
+    insert into t_blog (id, title, firstPicture, 
+      flag, views, appreciation, 
+      shareStatement, commentabled, published, 
+      recommend, createTime, updateTime, 
+      likes, user_id, type_id, 
+      content)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{firstpicture,jdbcType=VARCHAR}, 
+      #{flag,jdbcType=VARCHAR}, #{views,jdbcType=INTEGER}, #{appreciation,jdbcType=BIT}, 
+      #{sharestatement,jdbcType=BIT}, #{commentabled,jdbcType=BIT}, #{published,jdbcType=BIT}, 
+      #{recommend,jdbcType=BIT}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{likes,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{typeId,jdbcType=INTEGER}, 
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiezhixian.blog.pojo.Blog" >
+    insert into t_blog
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="firstpicture != null" >
+        firstPicture,
+      </if>
+      <if test="flag != null" >
+        flag,
+      </if>
+      <if test="views != null" >
+        views,
+      </if>
+      <if test="appreciation != null" >
+        appreciation,
+      </if>
+      <if test="sharestatement != null" >
+        shareStatement,
+      </if>
+      <if test="commentabled != null" >
+        commentabled,
+      </if>
+      <if test="published != null" >
+        published,
+      </if>
+      <if test="recommend != null" >
+        recommend,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+      <if test="updatetime != null" >
+        updateTime,
+      </if>
+      <if test="likes != null" >
+        likes,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="typeId != null" >
+        type_id,
+      </if>
+      <if test="describe != null" >
+        `describe`,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="firstpicture != null" >
+        #{firstpicture,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="views != null" >
+        #{views,jdbcType=INTEGER},
+      </if>
+      <if test="appreciation != null" >
+        #{appreciation,jdbcType=BIT},
+      </if>
+      <if test="sharestatement != null" >
+        #{sharestatement,jdbcType=BIT},
+      </if>
+      <if test="commentabled != null" >
+        #{commentabled,jdbcType=BIT},
+      </if>
+      <if test="published != null" >
+        #{published,jdbcType=BIT},
+      </if>
+      <if test="recommend != null" >
+        #{recommend,jdbcType=BIT},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="likes != null" >
+        #{likes,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null" >
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="describe != null" >
+        #{describe,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xiezhixian.blog.pojo.BlogExample" resultType="java.lang.Integer" >
+    select count(*) from t_blog
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_blog
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.firstpicture != null" >
+        firstPicture = #{record.firstpicture,jdbcType=VARCHAR},
+      </if>
+      <if test="record.flag != null" >
+        flag = #{record.flag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.views != null" >
+        views = #{record.views,jdbcType=INTEGER},
+      </if>
+      <if test="record.appreciation != null" >
+        appreciation = #{record.appreciation,jdbcType=BIT},
+      </if>
+      <if test="record.sharestatement != null" >
+        shareStatement = #{record.sharestatement,jdbcType=BIT},
+      </if>
+      <if test="record.commentabled != null" >
+        commentabled = #{record.commentabled,jdbcType=BIT},
+      </if>
+      <if test="record.published != null" >
+        published = #{record.published,jdbcType=BIT},
+      </if>
+      <if test="record.recommend != null" >
+        recommend = #{record.recommend,jdbcType=BIT},
+      </if>
+      <if test="record.createtime != null" >
+        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatetime != null" >
+        updateTime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.likes != null" >
+        likes = #{record.likes,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.typeId != null" >
+        type_id = #{record.typeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update t_blog
+    set id = #{record.id,jdbcType=INTEGER},
+      title = #{record.title,jdbcType=VARCHAR},
+      firstPicture = #{record.firstpicture,jdbcType=VARCHAR},
+      flag = #{record.flag,jdbcType=VARCHAR},
+      views = #{record.views,jdbcType=INTEGER},
+      appreciation = #{record.appreciation,jdbcType=BIT},
+      shareStatement = #{record.sharestatement,jdbcType=BIT},
+      commentabled = #{record.commentabled,jdbcType=BIT},
+      published = #{record.published,jdbcType=BIT},
+      recommend = #{record.recommend,jdbcType=BIT},
+      createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      updateTime = #{record.updatetime,jdbcType=TIMESTAMP},
+      likes = #{record.likes,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      type_id = #{record.typeId,jdbcType=INTEGER},
+      content = #{record.content,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_blog
+    set id = #{record.id,jdbcType=INTEGER},
+      title = #{record.title,jdbcType=VARCHAR},
+      firstPicture = #{record.firstpicture,jdbcType=VARCHAR},
+      flag = #{record.flag,jdbcType=VARCHAR},
+      views = #{record.views,jdbcType=INTEGER},
+      appreciation = #{record.appreciation,jdbcType=BIT},
+      shareStatement = #{record.sharestatement,jdbcType=BIT},
+      commentabled = #{record.commentabled,jdbcType=BIT},
+      published = #{record.published,jdbcType=BIT},
+      recommend = #{record.recommend,jdbcType=BIT},
+      createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      updateTime = #{record.updatetime,jdbcType=TIMESTAMP},
+      likes = #{record.likes,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      type_id = #{record.typeId,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiezhixian.blog.pojo.Blog" >
+    update t_blog
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="firstpicture != null" >
+        firstPicture = #{firstpicture,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        flag = #{flag,jdbcType=VARCHAR},
+      </if>
+      <if test="views != null" >
+        views = #{views,jdbcType=INTEGER},
+      </if>
+      <if test="appreciation != null" >
+        appreciation = #{appreciation,jdbcType=BIT},
+      </if>
+      <if test="sharestatement != null" >
+        shareStatement = #{sharestatement,jdbcType=BIT},
+      </if>
+      <if test="commentabled != null" >
+        commentabled = #{commentabled,jdbcType=BIT},
+      </if>
+      <if test="published != null" >
+        published = #{published,jdbcType=BIT},
+      </if>
+      <if test="recommend != null" >
+        recommend = #{recommend,jdbcType=BIT},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="likes != null" >
+        likes = #{likes,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null" >
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xiezhixian.blog.pojo.Blog" >
+    update t_blog
+    set title = #{title,jdbcType=VARCHAR},
+      firstPicture = #{firstpicture,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=VARCHAR},
+      views = #{views,jdbcType=INTEGER},
+      appreciation = #{appreciation,jdbcType=BIT},
+      shareStatement = #{sharestatement,jdbcType=BIT},
+      commentabled = #{commentabled,jdbcType=BIT},
+      published = #{published,jdbcType=BIT},
+      recommend = #{recommend,jdbcType=BIT},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      likes = #{likes,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      type_id = #{typeId,jdbcType=INTEGER},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiezhixian.blog.pojo.Blog" >
+    update t_blog
+    set title = #{title,jdbcType=VARCHAR},
+      firstPicture = #{firstpicture,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=VARCHAR},
+      views = #{views,jdbcType=INTEGER},
+      appreciation = #{appreciation,jdbcType=BIT},
+      shareStatement = #{sharestatement,jdbcType=BIT},
+      commentabled = #{commentabled,jdbcType=BIT},
+      published = #{published,jdbcType=BIT},
+      recommend = #{recommend,jdbcType=BIT},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      likes = #{likes,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      type_id = #{typeId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!--自己定义的sql语句-->
+  <!--     void saveContent(@Param("content") String content,@Param("id")Integer id);-->
+  <update id="saveContent">
+    update t_blog set content = #{content} where id = #{id}
+  </update>
+  <!--String getContent(@Param("id")Integer id);-->
+  <select id="getContent" resultType="java.lang.String">
+    select content from t_blog where id = #{id}
+  </select>
+  <!-- void saveDescribe(@Param("describe") String describe,@Param("id")Integer id);-->
+  <update id="saveDescribe">
+    update t_blog set `describe` = #{describe} where id = #{id}
+  </update>
+  <!--String getDescribe(@Param("id")Integer id);-->
+  <select id="getDescribe" resultType="java.lang.String">
+    select `describe` from t_blog where id = #{id}
+  </select>
+  <!--List<Blog> searchBlog(@Param("query")String query);-->
+  <select id="searchBlog" resultType="com.xiezhixian.blog.pojo.Blog">
+    select * from t_blog where `content` like #{query} or `title` like #{query}
+  </select>
+  <!-- void updateBlogViews(@Param("id")Integer id,@Param("views")Integer views);-->
+  <update id="updateBlogViews">
+    update t_blog set views = #{views} where id = #{id}
+  </update>
+  <!--List<String> findGroupYear();-->
+  <select id="findGroupYear" resultType="java.lang.String">
+    SELECT DATE_FORMAT(b.updateTime,'%Y') AS YEAR FROM t_blog b GROUP BY YEAR ORDER BY YEAR DESC;
+  </select>
+  <!-- List<Blog> selectBlogByYear(@Param("year")String year);-->
+  <select id="selectBlogByYear" resultType="com.xiezhixian.blog.pojo.Blog">
+    SELECT * FROM t_blog b WHERE DATE_FORMAT(b.updateTime,'%Y') = ${year};
+  </select>
+
+
+</mapper>

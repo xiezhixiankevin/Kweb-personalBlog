@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--引入jQuery-->
+    <script type="text/javascript" th:src="@{/js/jquery-1.12.4.min.js}"></script>
+    <!--引入样式-->
+    <link th:href="@{/lib/bootstrap-3.4.1-dist/bootstrap-3.4.1-dist/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/mycss.css}" rel="stylesheet">
+    <script th:src="@{/lib/bootstrap-3.4.1-dist/bootstrap-3.4.1-dist/js/bootstrap.min.js}"  ></script>
+</head>
+        <body class="littleblue">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h1>欢迎来到kevin的博客后台<small> From BJTU</small></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="jumbotron">
+                        <h1>Wellcom, Stranger!</h1>
+                        <p>...</p>
+                        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <form class="form-signin form-group-lg" th:method="post" th:action="@{/admin/login}">
+                        <h1 class="form-signin-heading">Please sign in</h1>
+                        <div>&nbsp;</div>
+                        <label for="inputUsername" class="sr-only">Username</label>
+                        <input  name="username" id="inputUsername" class="form-control" placeholder="Username" required>
+                        <div>&nbsp;</div>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+
+                        <button class="btn btn-lg btn-primary btn-block btn-success" type="submit">Sign in</button>
+                    </form>
+                    <div>&nbsp;</div>
+                    <form th:action="@{/admin/toregister}" th:method="get">
+                        <button class="btn btn-lg btn-primary btn-block ">Regist here</button>
+                    </form>
+
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+        </body>
+        <script>
+
+        </script>
+</html>
